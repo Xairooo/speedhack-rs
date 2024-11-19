@@ -2,9 +2,11 @@ name: Stable Release
 on:
   push:
     tags:
-      - 'v[0-9]+.*' # Release tags matching v*, i.e. v1.0, v20.15.10
+      - v* # Release tags matching v*, i.e. v1.0, v20.15.10
   workflow_dispatch:
-
+  create:
+    tags:
+      - v*  
 jobs:
   build_release_assets:
     name: Build release assets
